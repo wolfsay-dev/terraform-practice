@@ -1,3 +1,3 @@
 # Terraform Practice
 
-Aim to pratice Terraform and IaC
+Aim to practice Terraform and IaC

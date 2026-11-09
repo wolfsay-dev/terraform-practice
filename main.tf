@@ -15,8 +15,9 @@ resource "aws_s3_bucket" "first_bucket" {
     bucket = "mon-super-bucket-terraform-test-2026"
 
     tags = {
-        Environnement: var.environnement
+        Environnement = var.environnement
         ManagedBy = "Terraform"
+        ActualName = var.project_name
     }
   
 }

@@ -1,2 +1,5 @@
-environnement = "staging"
-project_name = "Projet environnement de test"
+common_tags = {
+  "Environnement" = "staging"
+  "ManagedBy" = "ws-dev"
+  "Project" = "Learning project"
+}

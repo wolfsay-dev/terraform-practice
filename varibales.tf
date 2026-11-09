@@ -1,10 +1,11 @@
-variable "environnement" {
-    type=string
-    description = "L'environnement cible pour l'infrastructure"
-    default = "dev"
-}
+variable "common_tags" {
+    type = map(string)
+    description = "Version de l'application, Nom de projet"
+    default = {
+      "Environnement" = "dev"
+      "ManagedBy" = "Terraform"
+      "ProjectName" = "Untilted"
 
-variable "project_name" {
-    type=string
-    default="Untilted"
+    }
+  
 }

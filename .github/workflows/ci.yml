@@ -24,11 +24,21 @@ jobs:
       - name: Installer Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Terraform Init
+      - name: Initialiser Terraform
         run: terraform init
 
-      - name: Terraform Validate
+      - name: Valider la syntaxe
         run: terraform validate
 
-      - name: Terraform Plan
+      - name: Planifier les modifications
         run: terraform plan
+        
+      - name: Connexion et déploiement via SSH sur l'instance
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.INSTANCE_ADRESS }}
+            username: ubuntu
+            key: ${{ secrets.INSTANCE_SECRET_KEY }}
+            script: |
+             cd terraform-practice
+             git pull origin main

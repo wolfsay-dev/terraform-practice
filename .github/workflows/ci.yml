@@ -40,5 +40,6 @@ jobs:
             username: ubuntu
             key: ${{ secrets.INSTANCE_SECRET_KEY }}
             script: |
+             cd
              cd terraform-practice
              git pull origin main
